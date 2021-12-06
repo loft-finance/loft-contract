@@ -7,8 +7,8 @@ import "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol";
 import "./interfaces/ISynthesizer.sol";
 
 contract LOFT is Initializable, OwnableUpgradeable, ERC20PausableUpgradeable {
-    // Maximum Total Supply 100 M
-    uint256 constant maxTotalSupply = 1e8 ether;
+    // Maximum Total Supply 1 B
+    uint256 constant maxTotalSupply = 1e9 ether;
 
     ISynthesizer public synthesizer;
 
@@ -16,7 +16,7 @@ contract LOFT is Initializable, OwnableUpgradeable, ERC20PausableUpgradeable {
         __Ownable_init();
         __ERC20_init("Loft Protocol", "LOFT");
         __ERC20Pausable_init();
-        _mint(_msgSender(), 37000000 ether);
+        _mint(_msgSender(), 2e8 ether); //20%
     }
 
     function liquidateDelinquentAccount(address account, uint256 susdAmount)
