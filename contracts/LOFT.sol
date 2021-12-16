@@ -16,7 +16,7 @@ contract LOFT is Initializable, OwnableUpgradeable, ERC20PausableUpgradeable {
         __Ownable_init();
         __ERC20_init("Loft Protocol", "LOFT");
         __ERC20Pausable_init();
-        _mint(_msgSender(), 2e8 ether); //20%
+        _mint(_msgSender(), 1e8 ether); //10%
     }
 
     function liquidateDelinquentAccount(address account, uint256 susdAmount)
